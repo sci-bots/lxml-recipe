@@ -1,0 +1,41 @@
+package:
+    name: lxml
+    version: 4.1.1.post1
+build:
+    number: '0'
+    script:
+        - pip install "{{ PKG_NAME }}==4.1.1"
+requirements:
+    build:
+        - pip
+        - python >=2.7,<2.8.0a0
+    run:
+        - python >=2.7,<2.8.0a0
+        - vc 9.*
+test:
+    imports:
+        - lxml
+        - lxml.etree
+        - lxml.objectify
+about:
+    description: 'The lxml XML toolkit is a Pythonic binding for the C libraries libxml2
+        and
+
+        libxslt. It is unique in that it combines the speed and XML feature
+
+        completeness of these libraries with the simplicity of a native Python API,
+
+        mostly compatible but superior to the well-known ElementTree API.
+
+        '
+    dev_url: https://github.com/lxml/lxml
+    doc_source_url: https://github.com/lxml/lxml/tree/master/doc
+    doc_url: http://lxml.de/index.html#documentation
+    home: http://lxml.de/
+    license: BSD 3-Clause, GPL-2.0, ZPL-2.0, and ElementTree
+    summary: Pythonic binding for the C libraries libxml2 and libxslt.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - cfobel
